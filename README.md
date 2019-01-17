@@ -31,7 +31,7 @@
 > 配置项目接口
 
 接口连接 指的是一级目录后的连接  （例如：http://localhost:7001/mock/getData/a 中的 /getData/a）
-支持JSON数据类型，和mockjs数据类型，主要使用双引号；
+支持JSON数据类型，和mockjs数据类型，注意使用双引号；
 
 <img src="https://github.com/lenolee16/mock/raw/master/doc/settingProject.png" width="665">
 
