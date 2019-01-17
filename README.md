@@ -43,7 +43,7 @@
 
 因为在egg里监听^/api路由做mock服务，所以最终的访问的mock请求连接要加上/api前缀。（http://localhost:7001/api/mock/getData/a）;
 
-<img src="https://github.com/lenolee16/mock/raw/master/doc/testing.png">
+<img src="https://github.com/lenolee16/mock/raw/master/doc/testing.png" height="400">
 
 
 
