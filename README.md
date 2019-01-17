@@ -26,24 +26,24 @@
 
 项目目录 指的是 接口的一级目录（例如：http://localhost:7001/mock/getData/a 中的 /mock）
 
-<img src="https://github.com/lenolee16/mock/raw/master/doc/addProject.png" width="665" height="369"/> 
+<img src="https://github.com/lenolee16/mock/raw/master/doc/addProject.png" width="665"/> 
 
 > 配置项目接口
 
 接口连接 指的是一级目录后的连接  （例如：http://localhost:7001/mock/getData/a 中的 /getData/a）
 支持JSON数据类型，和mockjs数据类型，主要使用双引号；
 
-<img src="https://github.com/lenolee16/mock/raw/master/doc/settingProject.png" width="665" height="369">
+<img src="https://github.com/lenolee16/mock/raw/master/doc/settingProject.png" width="665">
 
-<img src="https://github.com/lenolee16/mock/raw/master/doc/addInterface.png" width="665" height="369">
+<img src="https://github.com/lenolee16/mock/raw/master/doc/addInterface.png" width="665">
 
-<img src="https://github.com/lenolee16/mock/raw/master/doc/addInterface2.png" width="665" height="369">
+<img src="https://github.com/lenolee16/mock/raw/master/doc/addInterface2.png" width="665">
 
 > 测试接口
 
 因为在egg里监听^/api路由做mock服务，所以最终的访问的mock请求连接要加上/api前缀。（http://localhost:7001/api/mock/getData/a）;
 
-<img src="https://github.com/lenolee16/mock/raw/master/doc/testing.png" width="665" height="369">
+<img src="https://github.com/lenolee16/mock/raw/master/doc/testing.png">
 
 
 
