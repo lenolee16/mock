@@ -1,16 +1,16 @@
 
 ## 简介
 
-> 打造一个MOCK服务器! 支持JSON数据或者Mockjs方法。
+> 打造一个在线MOCK数据的服务器! 支持JSON数据或者Mockjs方法。
 
 > 技术栈
 
-- react全家桶
+- react
 - ant design Pro
 - egg.js
 - mysql
 
-前后端分离开发模式，前端项目与后端项目属于不同的工程,用户名：admin 密码： 123456
+前后端分离开发模式，前端项目与后端项目属于不同的工程,用户名：admin 密码： 123456
 
 ```javascript
 // mock/client 前端工程
@@ -52,7 +52,7 @@
 
 ## 运行项目
 
-因前后端不同端口原因，为解决跨域。前端工程启动了devServer，需先启动后端工程
+因前后端不同端口原因，为解决跨域。前端工程启动了devServer，需先启动后端工程
 
 * git clone https://github.com/lenolee16/mock.git
 * cd mock
