@@ -45,6 +45,8 @@
 
 <img src="https://github.com/lenolee16/mock/raw/master/doc/testing.png" height="400">
 
+<img src="https://github.com/lenolee16/mock/raw/master/doc/postman.png" height="400">
+
 
 
 
@@ -84,7 +86,7 @@ config.sequelize = {
 * npm run dev
 
 
-> 运行前端项目
+> 运行前端项目
 
 * cd client
 * npm install
