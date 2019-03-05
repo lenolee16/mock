@@ -196,7 +196,7 @@ class TableList extends PureComponent {
     dispatch({
       type: 'interfaces/testing',
       payload: {
-        path: `${project.projectPath}${interfacePath}`,
+        path: project.projectType ===  'restfulApi' ? `${project.projectPath}${interfacePath}` : `${project.projectPath}?${interfacePath}`,
         method: method.toUpperCase()
       },
       callback: (data) => {

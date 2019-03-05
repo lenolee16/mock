@@ -58,6 +58,17 @@ const CreateForm = Form.create()(props => {
           initialValue: values.projectPath
         })(<Input placeholder="请输入" />)}
       </FormItem>
+      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="项目目录">
+        {form.getFieldDecorator('projectType', {
+          rules: [{ required: true, message: '请选择项目类型！'}],
+          initialValue: values.projectType
+        })(
+          <Select placeholder="选择项目类型" style={{ width: '100%' }}>
+            <Option value="restfulApi">restfulApi</Option>
+            <Option value="restMiddleware">restMiddleware</Option>
+          </Select>
+        )}
+      </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="项目描述">
         {form.getFieldDecorator('projectContent', {
           rules: [{ required: true, message: '请输入至少五个字符的项目描述！', min: 5 }],
@@ -88,6 +99,10 @@ class TableList extends PureComponent {
     {
       title: '项目名称',
       dataIndex: 'projectTitle',
+    },
+    {
+      title: '项目类型',
+      dataIndex: 'projectType',
     },
     {
       title: '描述',
