@@ -17,13 +17,14 @@ class ProjectController extends Controller {
   }
   async add() {
     const { ctx } = this;
-    const { projectTitle, projectContent, projectPath } = ctx.request.body;
+    const { projectTitle, projectContent, projectPath, projectType } = ctx.request.body;
     const { userId } = await ctx.service.user.getUserByToken();
 
     const projectData = {
       projectTitle,
       projectContent,
       projectPath,
+      projectType,
       userId,
       status: 1,
     };
@@ -32,12 +33,13 @@ class ProjectController extends Controller {
   }
   async update() {
     const { ctx } = this;
-    const { projectTitle, projectContent, projectPath, projectId } = ctx.request.body;
+    const { projectTitle, projectContent, projectPath, projectId, projectType } = ctx.request.body;
     const { userId } = await ctx.service.user.getUserByToken();
     const projectData = {
       projectTitle,
       projectContent,
       projectPath,
+      projectType,
       projectId,
       userId,
       status: 1,

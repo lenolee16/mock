@@ -7,6 +7,7 @@ module.exports = app => {
     projectId: { type: INTEGER, primaryKey: true, autoIncrement: true }, // 项目id
     userId: { type: INTEGER }, // 用户id
     projectTitle: { type: STRING(30) }, // 项目标题
+    projectType: { type: STRING(20) }, // 项目类型
     projectPath: { type: STRING(100) }, // 项目目录
     projectContent: { type: STRING(255), allowNull: true }, // 项目内容
     status: { type: INTEGER }, // 状态

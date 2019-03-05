@@ -8,14 +8,30 @@ class ApiController extends Controller {
     const { ctx } = this;
     const { method } = ctx;
     const { 0: projectPath, 1: interfacePath } = ctx.params;
+    console.log(ctx.params);
     if (!interfacePath) {
       return ctx.returnBody(400, { msg: '找不到该项目' });
     }
-    const project = await ctx.service.project.queryProjectByPath(`/${projectPath}`);
+    let project = await ctx.service.project.queryProjectByPath(`/${projectPath}`);
     if (!project) {
-      return ctx.returnBody(400, { msg: '找不到该项目' });
+      const projectFull = await ctx.service.project.queryProjectByPath(`/${projectPath}/${interfacePath}`); // 判断是否是全路径的中间服务
+      if (projectFull) {
+        project = projectFull;
+      } else {
+        return ctx.returnBody(400, { msg: '找不到该项目' });
+      }
     }
-    const interfaces = await ctx.service.interfaces.queryInterfaceByPath(`/${interfacePath}`);
+    let interfaces;
+    if (project.projectType === 'restfulApi') {
+      interfaces = await ctx.service.interfaces.queryInterfaceByPath(`/${interfacePath}`);
+    } else {
+      if (ctx.search.includes('?')) {
+        const path = ctx.search.substr(1);
+        interfaces = await ctx.service.interfaces.queryInterfaceByPath(path);
+      } else {
+        return ctx.returnBody(400, { msg: '缺少code参数' });
+      }
+    }
     if (!interfaces) {
       return ctx.returnBody(400, { msg: '找不到接口' });
     }
@@ -24,7 +40,6 @@ class ApiController extends Controller {
     }
     if (interfaces.dataType === 'mockjs') {
       const mockdata = Mock.mock(JSON.parse(interfaces.interfaceData));
-      console.log(mockdata);
       return ctx.returnApi(200, mockdata);
     }
     return ctx.returnApi(200, JSON.parse(interfaces.interfaceData));
