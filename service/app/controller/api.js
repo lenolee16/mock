@@ -8,7 +8,6 @@ class ApiController extends Controller {
     const { ctx } = this;
     const { method } = ctx;
     const { 0: projectPath, 1: interfacePath } = ctx.params;
-    console.log(ctx.params);
     if (!interfacePath) {
       return ctx.returnBody(400, { msg: '找不到该项目' });
     }
