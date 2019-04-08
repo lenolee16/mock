@@ -138,7 +138,7 @@ class TableList extends PureComponent {
     },
     {
       title: '修改时间',
-      dataIndex: 'updatedAt',
+      dataIndex: 'updated_at',
       sorter: true,
       render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
     },
@@ -160,7 +160,7 @@ class TableList extends PureComponent {
 
   constructor (props) {
     super(props);
-    
+
     this.state = {
       modalVisible: false,
       expandForm: false,
