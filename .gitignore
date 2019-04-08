@@ -7,7 +7,7 @@
 _roadhog-api-doc
 
 # production
-/dist
+/client/dist
 /.vscode
 
 # misc

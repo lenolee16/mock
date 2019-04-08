@@ -4,7 +4,12 @@ const Service = require('egg').Service;
 
 class InterfacesService extends Service {
   async queryList(query) {
-    const { ctx } = this;
+    const { ctx, app } = this;
+    if (query.interfacePath) {
+      query.interfacePath = {
+        [app.Sequelize.Op.like]: `%${query.interfacePath}%`,
+      };
+    }
     return await ctx.model.Interface.findAll({
       where: query,
       include: [{

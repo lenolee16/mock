@@ -5,6 +5,11 @@ const Service = require('egg').Service;
 class ProjectService extends Service {
   async queryList(query) {
     const { ctx, app } = this;
+    if (query.projectTitle) {
+      query.projectTitle = {
+        [app.Sequelize.Op.like]: `%${query.projectTitle}%`,
+      };
+    }
     return await ctx.model.Project.findAll({
       where: query,
       attributes: [ 'project.*', [ app.Sequelize.fn('COUNT', app.Sequelize.col('interfaces.interfaceId')), 'interfaceCount' ]],

@@ -38,6 +38,7 @@ class InterfacesController extends Controller {
       userId,
       status: 1,
     };
+    ctx.logger.info('增加接口: %j', projectData);
     await ctx.service.interfaces.insertInterface(projectData);
     ctx.returnBody(200, '添加成功');
   }
