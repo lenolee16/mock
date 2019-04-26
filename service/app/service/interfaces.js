@@ -14,7 +14,7 @@ class InterfacesService extends Service {
       where: query,
       include: [{
         model: ctx.model.Project,
-        attributes: [ 'projectId', 'projectPath', 'projectTitle' ],
+        attributes: [ 'projectId', 'projectPath', 'projectTitle', 'projectType' ],
       }],
       order: [[ 'created_at', 'DESC' ]],
     });
